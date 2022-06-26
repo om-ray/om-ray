@@ -25,20 +25,16 @@
       </style>
 
       <div class="tags">
-        <div class="tag">Angular</div>
-        <div class="tag">Vue(X)</div>
+        <div class="tag">Next.js</div>
+        <div class="tag">React.js</div>
         <div class="tag">JavaScript</div>
         <div class="tag">TypeScript</div>
       </div>
       <div class="tags">
         <div class="tag">(S)CSS</div>
-        <div class="tag">Building UIs</div>
-        <div class="tag">Web Components</div>
-      </div>
-      <div class="tags">
-        <div class="tag">Ionic</div>
-        <div class="tag">Electron</div>
-        <div class="tag">.NET</div>
+        <div class="tag">HTML5</div>
+        <div class="tag">Node.js</div>
+        <div class="tag">Express</div>
       </div>
 
     </div>
