@@ -9,18 +9,3 @@ I'm Om! I'm a Fullstack developer from the US specializing in web development an
 <p>
   <img src="https://raw.githubusercontent.com/123om123/123om123/main/tags.svg"></img>
 </p>
-
-## The languages (And frameworks) I'm familiar with:
-
-  - ### HTML/CSS:
-
-    - SCSS
-    - Tailwind
-  
-  - ### Javascript:
-
-    - Next.js
-    - React.js
-    - Web3.js
-    - Node.js
-    - Express.js
