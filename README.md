@@ -4,7 +4,7 @@
 
 # Hi there!
 
-I'm Om (he/him)! I'm a Fullstack developer from the US specializing in web development and some blockchain coding using web3.js!
+I'm Om! I'm a Fullstack developer from the US specializing in web development and some blockchain coding using web3.js!
 
 <p>
   <img src="https://raw.githubusercontent.com/123om123/123om123/main/tags.svg"></img>
