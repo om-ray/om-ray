@@ -68,6 +68,7 @@
 
     text{
       text-anchor: middle;
+      font-family:"monospace"
     }
   </style>
   <g class="parallax">
