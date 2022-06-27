@@ -24,4 +24,4 @@ let init = function () {
   });
 };
 
-document.addEventListener("load", init);
+document.addEventListener("load", init());
