@@ -1,5 +1,6 @@
 <svg class="mountains" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="" viewBox="0 24 150 28" preserveAspectRatio="none">
   <defs>
+    <image id="pfp" style="border-radius: 100%; position:absolute; z-index:9999" width="100px" height="100px" href="./Images/123om123.png"></image>
     <linearGradient id="0" x1="0.5" y1="0" x2="0.5" y2="1">
       <stop offset="0%" stop-color="#ffffb5" />
       <stop offset="7.33%" stop-color="#fef372" />
@@ -26,22 +27,28 @@
   <g class="parallax">
     <rect fill="url(#0)" height="500%" width="100%" />
     <rect fill="url(#1)" height="500%" width="100%" />
-    <use xlink:href="#mountain" x="48" y="0" fill="rgba(149, 202, 202, 0.5)" />
-    <use xlink:href="#mountain" x="48" y="3" fill="rgba(149, 202, 202, 0.4)" />
-    <use xlink:href="#mountain" x="48" y="5" fill="rgba(12, 164, 165, 0.3)" />
-    <use xlink:href="#mountain" x="48" y="7" fill="rgba(12, 164, 165, 0.2)" />
+    <use href="#mountain" x="48" y="0" fill="rgba(149, 202, 202, 0.5)" />
+    <use href="#mountain" x="48" y="3" fill="rgba(149, 202, 202, 0.4)" />
+    <use href="#mountain" x="48" y="5" fill="rgba(12, 164, 165, 0.3)" />
+    <use href="#mountain" x="48" y="7" fill="rgba(12, 164, 165, 0.2)" />
+    <use href="#pfp"></use>
   </g>
 
   <style>
   .mountains {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
+    left:0px; 
+    top:0px; 
+    width:91%; 
+    height:100px; 
     min-height: 50px;
     max-height: 100px;
     border-radius:100px;
   }
+  .parallax{
+    z-index: -1;
+  }
+
   .parallax>use {
     animation: move-forever 70s cubic-bezier(.55, .5, .45, .5) infinite;      
   }
