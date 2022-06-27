@@ -2,9 +2,9 @@
     <img src="./mountains.svg">
   </div>
 
-# Hi, Im Om
+---
 
-I'm working on contributing to open-source projects and working with web3js to make decentralized web apps!
+I'm working on contributing to open-source projects, using web3js, and making web apps!
 
 ## Current projects
 
@@ -14,7 +14,7 @@ I'm working on contributing to open-source projects and working with web3js to m
 
 ## Skills
 
-  <div>
+  <div align="left">
     <img width='32px' src='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/javascript.svg'></img>
     <img width='32px' src='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/typescript.svg'></img>
     <img width='32px' src='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/nodejs.svg'></img>
@@ -29,4 +29,3 @@ I'm working on contributing to open-source projects and working with web3js to m
     <img width='32px' src='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/postgresql.svg'></img>
     <img width='32px' src='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/figma.svg'></img>
   </div>
-</p>
