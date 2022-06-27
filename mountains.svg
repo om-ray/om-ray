@@ -1,0 +1,74 @@
+<svg class="mountains" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="" viewBox="0 24 150 28" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="0" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#ffffb5" />
+      <stop offset="7.33%" stop-color="#fef372" />
+      <stop offset="22%" stop-color="#f6d860" />
+      <stop offset="27.67%" stop-color="#f3bf59" />
+      <stop offset="39%" stop-color="#ed894b" />
+      <stop offset="45%" stop-color="#e47346" />
+      <stop offset="57%" stop-color="#d53a42" />
+      <stop offset="63.33%" stop-color="#c93a51" />
+      <stop offset="76%" stop-color="#b1385e" />
+      <stop offset="82%" stop-color="#97385d" />
+      <stop offset="94%" stop-color="#6a324f" />
+    </linearGradient>
+    <radialGradient id="1" gradientTransform="translate(-1 -0.5) scale(2, 2)">
+      <stop offset="19%" stop-color="#d53a42" />
+      <stop offset="39.25%" stop-color="rgba(204, 58, 78, 0.75)" />
+      <stop offset="59.5%" stop-color="rgba(194, 57, 86, 0.5)" />
+      <stop offset="100%" stop-color="rgba(177, 56, 94, 0)" />
+    </radialGradient>
+  </defs>
+  <defs>
+    <path id="mountain" d="M -160 44 l 88 -18 l 88 18 l 88 -18 l 88 18 v 44 h -352 z" />
+  </defs>
+  <g class="parallax">
+    <rect fill="url(#0)" height="500%" width="100%" />
+    <rect fill="url(#1)" height="500%" width="100%" />
+    <use xlink:href="#mountain" x="48" y="0" fill="rgba(149, 202, 202, 0.5)" />
+    <use xlink:href="#mountain" x="48" y="3" fill="rgba(149, 202, 202, 0.4)" />
+    <use xlink:href="#mountain" x="48" y="5" fill="rgba(12, 164, 165, 0.3)" />
+    <use xlink:href="#mountain" x="48" y="7" fill="rgba(12, 164, 165, 0.2)" />
+  </g>
+
+  <style>
+  .mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    min-height: 50px;
+    max-height: 100px;
+    border-radius:100px;
+  }
+  .parallax>use {
+    animation: move-forever 70s cubic-bezier(.55, .5, .45, .5) infinite;      
+  }
+  .parallax>use:nth-child(1) {
+    animation-delay: -10s;
+    animation-duration: 60s;
+  }
+  .parallax>use:nth-child(2) {
+    animation-delay: -20s;
+    animation-duration: 50s;
+  }
+  .parallax>use:nth-child(3) {
+    animation-delay: -30s;
+    animation-duration: 40s;
+  }
+  .parallax>use:nth-child(4) {
+    animation-delay: -40s;
+    animation-duration: 30s;
+  }
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }
+</style>
+
+</svg>
