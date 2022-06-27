@@ -1,43 +1,66 @@
-<svg fill="none" viewBox="0 0 300 120" width="300" height="120" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 1920 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <script href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script href="./hover-effect.js"></script>
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
-
       <style>
-        .tags {
-          display: flex;
-          flex-wrap: wrap;
-          height: 100%;
-          width: 100%;
+        foreignObject{
+          overflow-x: scroll;
         }
+
+        .tags {
+          display:flex;
+          overflow-x: auto;
+          overflow-y: hidden;
+          white-space: nowrap;
+          height: 100%;
+          width: fit-content;
+        }
+        
         .tag {
-          background-color: #E3FFFF;
-          border-radius: 0.25em;
-          color: #0ca4a5;
-          border: 1px solid #0ca4a5;
-          display: inline-block;
+          background-color:#fff;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           font-size: 0.75em;
-          line-height: 2em;
-          margin: 0.125em;
-          padding: 0 0.5em;
-          text-decoration: none;
-          font-family: sans-serif;
+          width:100px;
+          height:100px;
+          padding:30px;
+          margin:40px;
+          border:1px solid black;
+        }
+
+        .tag > canvas{
+          width:100% !important;
+          height:100% !important;
+        }
+
+        .tag:hover > canvas {
+          width:155% !important;
+          height:155% !important;
+          border-radius:100%;
         }
       </style>
 
       <div class="tags">
-        <div class="tag">Next.js</div>
-        <div class="tag">React.js</div>
-        <div class="tag">JavaScript</div>
-        <div class="tag">TypeScript</div>
-      </div>
-      <div class="tags">
-        <div class="tag">(S)CSS</div>
-        <div class="tag">HTML5</div>
-        <div class="tag">Node.js</div>
-        <div class="tag">Express</div>
-        <div class="tag">Web3.js</div>
+        <div id="javascript" class="tag"></div>
+        <div id="typescript" class="tag"></div>
+        <div id="nodejs" class="tag"></div>
+        <div id="express" class="tag"></div>
+        <div id="reactjs" class="tag"></div>
+        <div id="nextjs" class="tag"></div>
+        <div id="web3js" class="tag"></div>
+        <div id="html" class="tag"></div>
+        <div id="css" class="tag"></div>
+        <div id="sass" class="tag"></div>
+        <div id="graphql" class="tag"></div>
+        <div id="postgresql" class="tag"></div>
+        <div id="figma" class="tag"></div>
       </div>
 
     </div>
   </foreignObject>
+  <script href="./main.js"></script>
 </svg>
