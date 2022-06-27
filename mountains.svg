@@ -78,7 +78,7 @@
     <use href="#mountain" x="48" y="3" fill="rgba(149, 202, 202, 0.4)" />
     <use href="#mountain" x="48" y="5" fill="rgba(12, 164, 165, 0.3)" />
     <use href="#mountain" x="48" y="7" fill="rgba(12, 164, 165, 0.2)" />
-    <text x="50%" y="150%" dominant-baseline="auto" font-size="10" font-family="monospace">Hi, I'm Om</text>
+    <text x="50%" y="150%" dominant-baseline="auto" font-size="10" font-family="monospace">𝙷𝚒, 𝙸'𝚖 𝙾𝚖</text>
   </g>
 
 </svg>
