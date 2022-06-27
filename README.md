@@ -52,7 +52,7 @@ I'm working on contributing to open-source projects, using web3js, making web ap
     </a>
   </div>
 
-## How to contact me 🗣️
+## How to contact me 📱
 
 <a href = 'https://www.github.com/123om123'> <img width = '24px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/github.svg"/></a>
 <a href = 'https://www.linkedin.com/in/om-ray-0633971a3/'> <img width = '24px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/linked-in-alt.svg"/></a>
