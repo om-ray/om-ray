@@ -17,10 +17,10 @@ I'm working on contributing to open-source projects, using web3js, making web ap
 ## Skills 💻
 
   <div align="left">
-    <a href= https://github.com/123om123?tab=repositories&q=&type=&language=javascript&sort= >
+    <a href= https://github.com/om-ray?tab=repositories&q=&type=&language=javascript&sort= >
     <img width='32px' src='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/javascript.svg'></img>
     </a>
-    <a href= https://github.com/123om123?tab=repositories&q=&type=&language=typescript&sort= >
+    <a href= https://github.com/om-ray?tab=repositories&q=&type=&language=typescript&sort= >
     <img width='32px' src='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/typescript.svg'></img>
     </a>
     <a href="https://nodejs.org/en/">
@@ -54,11 +54,11 @@ I'm working on contributing to open-source projects, using web3js, making web ap
 
 ## How to contact me 📱
 
-<a href = 'https://www.github.com/123om123'> <img width = '24px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/github.svg"/></a>
+<a href = 'https://www.github.com/om-ray'> <img width = '24px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/github.svg"/></a>
 <a href = 'https://www.linkedin.com/in/om-ray-0633971a3/'> <img width = '24px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/linked-in-alt.svg"/></a>
 
 ## My Github stats 💪🏾
 
-<a href="https://github.com/123om123">
-  <img style="width="20%"; height="20%"; align="center";" src="https://github-readme-stats.vercel.app/api?username=123om123&count_private=true&show_icons=true&theme=dark&custom_title=GitHub%20Stats&include_all_commits=true&line_height=28&border_radius=20" />
+<a href="https://github.com/om-ray">
+  <img style="width="20%"; height="20%"; align="center";" src="https://github-readme-stats.vercel.app/api?username=om-ray&count_private=true&show_icons=true&theme=dark&custom_title=GitHub%20Stats&include_all_commits=true&line_height=28&border_radius=20" />
 </a>
