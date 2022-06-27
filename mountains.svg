@@ -24,10 +24,6 @@
     <path id="mountain" d="M -160 44 l 88 -18 l 88 18 l 88 -18 l 88 18 v 44 h -352 z" />
   </defs>
   <style>
-    @font-face {
-      font-family:staatliches;
-      src: url("./Staatliches/Staatliches-Regular")
-    }
 
     .mountains {
       width:100%; 
@@ -72,7 +68,6 @@
 
     text{
       text-anchor: middle;
-      font-family:"staatliches"
     }
   </style>
   <g class="parallax">
@@ -82,7 +77,7 @@
     <use href="#mountain" x="48" y="3" fill="rgba(149, 202, 202, 0.4)" />
     <use href="#mountain" x="48" y="5" fill="rgba(12, 164, 165, 0.3)" />
     <use href="#mountain" x="48" y="7" fill="rgba(12, 164, 165, 0.2)" />
-    <text x="50%" y="150%" dominant-baseline="auto" font-size="10">Hi, I'm Om</text>
+    <text x="50%" y="150%" dominant-baseline="auto" font-size="10" font-family="monospace">Hi, I'm Om</text>
   </g>
 
 </svg>
