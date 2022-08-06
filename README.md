@@ -1,12 +1,8 @@
-  <div align="center">
-    <img src="./mountains.svg">
-  </div>
 
----
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=123om123.visitor-badge&right_color=blue)
 
-I'm working on contributing to open-source projects, using web3js, making web apps, and filling out my resume!
+Fullstack developer 
 
 ## Current projects 🗒️
 
