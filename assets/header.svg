@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Om Ray, full-stack developer">
+  <title>Om Ray, full-stack developer</title>
+  <defs>
+    <clipPath id="round"><rect width="1200" height="320" rx="18"/></clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f0a1f"/>
+      <stop offset="0.45" stop-color="#3b1a52"/>
+      <stop offset="0.72" stop-color="#b1385e"/>
+      <stop offset="0.9" stop-color="#ed894b"/>
+      <stop offset="1" stop-color="#f6d860"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffb5"/>
+      <stop offset="0.35" stop-color="#f6d860"/>
+      <stop offset="0.7" stop-color="#ed894b"/>
+      <stop offset="1" stop-color="#d53a42"/>
+    </linearGradient>
+    <mask id="stripes">
+      <rect width="1200" height="320" fill="#fff"/>
+      <rect x="0" y="196" width="1200" height="4" fill="#000"/>
+      <rect x="0" y="210" width="1200" height="6" fill="#000"/>
+      <rect x="0" y="226" width="1200" height="8" fill="#000"/>
+      <rect x="0" y="244" width="1200" height="10" fill="#000"/>
+    </mask>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <style>
+    .stars circle { fill:#fff; animation: twinkle 4s ease-in-out infinite; }
+    @keyframes twinkle { 0%,100% { opacity:.25 } 50% { opacity:1 } }
+    .layer { animation: drift linear infinite; }
+    @keyframes drift { from { transform: translateX(0) } to { transform: translateX(-1200px) } }
+    .sun { animation: rise 6s ease-in-out infinite alternate; }
+    @keyframes rise { from { transform: translateY(6px) } to { transform: translateY(-6px) } }
+    .name { font: 800 76px ui-sans-serif, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing:-2px; fill:#fff; }
+    .tag { font: 500 22px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill:#ffe9c4; }
+    .cursor { animation: blink 1.1s steps(1) infinite; fill:#f6d860; }
+    @keyframes blink { 50% { opacity:0 } }
+    @media (prefers-reduced-motion: reduce) { .layer, .sun, .stars circle, .cursor { animation:none } }
+  </style>
+  <g clip-path="url(#round)">
+  <rect width="1200" height="320" fill="url(#sky)"/>
+  <g class="stars"><circle cx="497" cy="147" r="1.0" style="animation-delay:-1.5s"/><circle cx="980" cy="24" r="0.8" style="animation-delay:-3.6s"/><circle cx="970" cy="74" r="1.0" style="animation-delay:-0.8s"/><circle cx="973" cy="146" r="1.6" style="animation-delay:-1.6s"/><circle cx="318" cy="67" r="1.0" style="animation-delay:-3.5s"/><circle cx="1081" cy="107" r="0.8" style="animation-delay:-2.7s"/><circle cx="141" cy="48" r="0.8" style="animation-delay:-1.2s"/><circle cx="73" cy="76" r="1.6" style="animation-delay:-2.4s"/><circle cx="803" cy="117" r="1.6" style="animation-delay:-2.9s"/><circle cx="920" cy="42" r="1.2" style="animation-delay:-0.4s"/><circle cx="288" cy="134" r="1.0" style="animation-delay:-1.0s"/><circle cx="903" cy="85" r="1.6" style="animation-delay:-2.0s"/><circle cx="800" cy="97" r="1.6" style="animation-delay:-2.3s"/><circle cx="699" cy="15" r="1.2" style="animation-delay:-4.0s"/><circle cx="344" cy="91" r="0.8" style="animation-delay:-2.9s"/><circle cx="442" cy="76" r="1.2" style="animation-delay:-0.5s"/><circle cx="997" cy="131" r="0.8" style="animation-delay:-1.4s"/><circle cx="146" cy="113" r="1.0" style="animation-delay:-0.1s"/><circle cx="884" cy="114" r="0.8" style="animation-delay:-0.2s"/><circle cx="102" cy="104" r="1.2" style="animation-delay:-2.2s"/><circle cx="581" cy="137" r="1.0" style="animation-delay:-4.0s"/><circle cx="644" cy="9" r="0.8" style="animation-delay:-0.4s"/><circle cx="1106" cy="16" r="1.0" style="animation-delay:-3.9s"/><circle cx="607" cy="75" r="1.0" style="animation-delay:-2.8s"/><circle cx="705" cy="88" r="1.2" style="animation-delay:-3.8s"/><circle cx="783" cy="104" r="1.6" style="animation-delay:-3.5s"/><circle cx="800" cy="34" r="1.2" style="animation-delay:-1.7s"/><circle cx="496" cy="85" r="1.6" style="animation-delay:-3.9s"/><circle cx="1077" cy="85" r="1.2" style="animation-delay:-0.0s"/><circle cx="860" cy="88" r="0.8" style="animation-delay:-1.5s"/><circle cx="282" cy="23" r="1.2" style="animation-delay:-1.9s"/><circle cx="732" cy="79" r="1.6" style="animation-delay:-0.1s"/><circle cx="134" cy="13" r="1.2" style="animation-delay:-1.0s"/><circle cx="944" cy="84" r="1.2" style="animation-delay:-0.7s"/><circle cx="389" cy="88" r="1.2" style="animation-delay:-3.4s"/><circle cx="550" cy="84" r="1.6" style="animation-delay:-0.4s"/><circle cx="65" cy="41" r="1.2" style="animation-delay:-2.0s"/><circle cx="561" cy="69" r="1.2" style="animation-delay:-0.7s"/><circle cx="901" cy="32" r="0.8" style="animation-delay:-2.4s"/><circle cx="693" cy="65" r="1.6" style="animation-delay:-3.2s"/><circle cx="356" cy="28" r="1.2" style="animation-delay:-3.0s"/><circle cx="456" cy="123" r="1.2" style="animation-delay:-0.9s"/><circle cx="257" cy="16" r="1.0" style="animation-delay:-1.3s"/><circle cx="1187" cy="54" r="1.2" style="animation-delay:-1.4s"/><circle cx="185" cy="96" r="1.0" style="animation-delay:-1.7s"/><circle cx="1071" cy="77" r="1.6" style="animation-delay:-1.4s"/></g>
+  <g class="sun">
+    <circle cx="900" cy="215" r="105" fill="#f3bf59" opacity=".55" filter="url(#glow)"/>
+    <circle cx="900" cy="215" r="95" fill="url(#sun)" mask="url(#stripes)"/>
+  </g>
+  <path class="layer" style="animation-duration:140s" d="M0 320 L0 182.3 L60 194.4 L120 159.4 L180 199.9 L240 167.5 L300 179.4 L360 200.9 L420 169.5 L480 202.4 L540 174.6 L600 200.1 L660 198.7 L720 175.3 L780 147.1 L840 196.3 L900 189.4 L960 161.1 L1020 138.7 L1080 164.6 L1140 177.2 L1200 182.3 L1260 194.4 L1320 159.4 L1380 199.9 L1440 167.5 L1500 179.4 L1560 200.9 L1620 169.5 L1680 202.4 L1740 174.6 L1800 200.1 L1860 198.7 L1920 175.3 L1980 147.1 L2040 196.3 L2100 189.4 L2160 161.1 L2220 138.7 L2280 164.6 L2340 177.2 L2400 182.3 L2400 320 Z" fill="#8a3b72" opacity="0.55"/>
+  <path class="layer" style="animation-duration:90s" d="M0 320 L0 207.9 L48 201.4 L96 179.5 L144 207.1 L192 204.5 L240 199.8 L288 223.9 L336 204.3 L384 197.2 L432 187.4 L480 229.4 L528 216.8 L576 229.6 L624 186.4 L672 193.4 L720 232.5 L768 176.1 L816 177.1 L864 195.8 L912 198.1 L960 225.6 L1008 234.1 L1056 203.3 L1104 231.4 L1152 223.6 L1200 207.9 L1248 201.4 L1296 179.5 L1344 207.1 L1392 204.5 L1440 199.8 L1488 223.9 L1536 204.3 L1584 197.2 L1632 187.4 L1680 229.4 L1728 216.8 L1776 229.6 L1824 186.4 L1872 193.4 L1920 232.5 L1968 176.1 L2016 177.1 L2064 195.8 L2112 198.1 L2160 225.6 L2208 234.1 L2256 203.3 L2304 231.4 L2352 223.6 L2400 207.9 L2400 320 Z" fill="#5e2a63" opacity="0.75"/>
+  <path class="layer" style="animation-duration:55s" d="M0 320 L0 220.4 L40 219.3 L80 221.8 L120 258.2 L160 235.4 L200 242.9 L240 238.1 L280 256.1 L320 253.4 L360 242.0 L400 252.1 L440 241.5 L480 260.9 L520 258.1 L560 230.0 L600 243.0 L640 238.9 L680 229.0 L720 245.8 L760 259.4 L800 226.8 L840 235.5 L880 232.4 L920 234.1 L960 218.3 L1000 245.7 L1040 227.8 L1080 245.4 L1120 236.3 L1160 232.3 L1200 220.4 L1240 219.3 L1280 221.8 L1320 258.2 L1360 235.4 L1400 242.9 L1440 238.1 L1480 256.1 L1520 253.4 L1560 242.0 L1600 252.1 L1640 241.5 L1680 260.9 L1720 258.1 L1760 230.0 L1800 243.0 L1840 238.9 L1880 229.0 L1920 245.8 L1960 259.4 L2000 226.8 L2040 235.5 L2080 232.4 L2120 234.1 L2160 218.3 L2200 245.7 L2240 227.8 L2280 245.4 L2320 236.3 L2360 232.3 L2400 220.4 L2400 320 Z" fill="#3a1c4d" opacity="0.9"/>
+  <path class="layer" style="animation-duration:32s" d="M0 320 L0 273.3 L30 269.7 L60 268.1 L90 263.7 L120 269.8 L150 264.3 L180 291.1 L210 278.0 L240 263.7 L270 272.5 L300 265.0 L330 288.6 L360 277.9 L390 284.6 L420 275.7 L450 274.8 L480 291.6 L510 285.5 L540 283.6 L570 264.5 L600 269.0 L630 287.2 L660 268.1 L690 287.8 L720 273.5 L750 288.2 L780 291.9 L810 265.9 L840 285.7 L870 285.5 L900 262.5 L930 265.8 L960 283.3 L990 263.2 L1020 275.8 L1050 271.7 L1080 285.9 L1110 263.8 L1140 271.3 L1170 263.0 L1200 273.3 L1230 269.7 L1260 268.1 L1290 263.7 L1320 269.8 L1350 264.3 L1380 291.1 L1410 278.0 L1440 263.7 L1470 272.5 L1500 265.0 L1530 288.6 L1560 277.9 L1590 284.6 L1620 275.7 L1650 274.8 L1680 291.6 L1710 285.5 L1740 283.6 L1770 264.5 L1800 269.0 L1830 287.2 L1860 268.1 L1890 287.8 L1920 273.5 L1950 288.2 L1980 291.9 L2010 265.9 L2040 285.7 L2070 285.5 L2100 262.5 L2130 265.8 L2160 283.3 L2190 263.2 L2220 275.8 L2250 271.7 L2280 285.9 L2310 263.8 L2340 271.3 L2370 263.0 L2400 273.3 L2400 320 Z" fill="#1f1233" opacity="1"/>
+  <text class="name" x="64" y="122">Om Ray</text>
+  <text class="tag" x="68" y="166">full-stack dev · web apps, extensions, games<tspan class="cursor"> _</tspan></text>
+  </g>
+</svg>
