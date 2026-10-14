@@ -7,17 +7,13 @@
   <a href="https://github.com/om-ray?tab=repositories&type=source"><img src="https://img.shields.io/badge/Repos-1f1233?style=for-the-badge&logo=github&logoColor=white" alt="Repositories" /></a>
 </p>
 
-I build things for the web, mostly in TypeScript. Planners, browser extensions, chart tools, automation scripts, and a few multiplayer browser games. I've also shipped fixes to Cal.com and Sentry.
+I build things for the web, mostly in TypeScript. A daily planner, an AI vision board app, and a few multiplayer browser games. I've also shipped fixes to Cal.com and Sentry.
 
-## Lately
+## Projects
 
 | Project | What it is | Built with |
 | --- | --- | --- |
-| [**Mikan I+1 report**](https://om-ray.github.io/mikan-i-plus-one-report/) | Static report on sentence audio availability for Mikan I+1 cards | HTML |
-| [**Youtube-Faceless**](https://github.com/om-ray/Youtube-Faceless) | Turns top Reddit posts into narrated YouTube Shorts: script, voiceover, render, upload | Node, OpenAI, PlayHT, ffmpeg, YouTube API |
-| [**Revife**](https://github.com/om-ray/Revife-Extension) | Chrome extension that automates fashion site tasks, with a Firebase backend | Manifest V3, TypeScript, Firebase |
-| [**ChartWiz v2**](https://github.com/om-ray/chartwiz-v2) | Charting app with sign-in and a Postgres backend | Next.js, Lightweight Charts, NextAuth |
-| [**Goals**](https://github.com/om-ray/Goals) | Mobile app for setting and tracking goals | React Native, Firebase |
+| [**Goals**](https://github.com/om-ray/Goals) | AI vision board app. You pick your purpose, lifestyle, dream home, car and style, add a photo of yourself, and it generates an image of you five years from now living that life | React Native, Firebase, Midjourney API |
 | [**Luminity**](https://github.com/om-ray/sunsama_next) | My own take on Sunsama, a daily planner for tasks and calendar | Next.js, TypeScript, Tailwind |
 
 <details>
