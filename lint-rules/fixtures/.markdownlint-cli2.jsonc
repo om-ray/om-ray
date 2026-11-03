@@ -1,0 +1,4 @@
+{
+  "customRules": ["../local-asset-exists.cjs"],
+  "config": { "default": false, "local-asset-exists": true }
+}
