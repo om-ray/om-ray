@@ -1,0 +1,11 @@
+{
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules/**", ".claude/**", "lint-rules/fixtures/**", ".verify/**"],
+  "customRules": ["./lint-rules/local-asset-exists.cjs", "./lint-rules/link-tap-target.cjs"],
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD041": false,
+    "MD033": { "allowed_elements": ["a", "p", "picture", "source", "img"] }
+  }
+}

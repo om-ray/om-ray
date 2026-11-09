@@ -1,0 +1,4 @@
+{
+  "customRules": ["../local-asset-exists.cjs", "../link-tap-target.cjs"],
+  "config": { "default": false, "local-asset-exists": true, "link-tap-target": true }
+}

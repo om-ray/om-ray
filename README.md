@@ -7,7 +7,7 @@
 </a>
 
 <p align="center">
-  <a href="https://omray.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/link-site-dark.svg" /><img src="./assets/link-site.svg" alt="omray.dev" height="32" /></picture></a>
-  <a href="https://x.com/OmRayDev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/link-x-dark.svg" /><img src="./assets/link-x.svg" alt="X @OmRayDev" height="32" /></picture></a>
-  <a href="https://www.linkedin.com/in/om-ray-0633971a3/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/link-linkedin-dark.svg" /><img src="./assets/link-linkedin.svg" alt="LinkedIn" height="32" /></picture></a>
+  <a href="https://omray.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/link-site-dark.svg" /><img src="./assets/link-site.svg" alt="omray.dev" height="44" /></picture></a>&ensp;
+  <a href="https://x.com/OmRayDev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/link-x-dark.svg" /><img src="./assets/link-x.svg" alt="X @OmRayDev" height="44" /></picture></a>&ensp;
+  <a href="https://www.linkedin.com/in/om-ray-0633971a3/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/link-linkedin-dark.svg" /><img src="./assets/link-linkedin.svg" alt="LinkedIn" height="44" /></picture></a>
 </p>
