@@ -35,7 +35,7 @@ const readProfile = () =>
           [img.left + 1, img.top + img.height / 2],
           [img.right - 1, img.top + img.height / 2],
         ].every(([x, y]) => hit(x, y));
-        return { href: a.href, img: image(a.querySelector("img")), tapHeight: Math.round(tapHeight), tapWidth: Math.round(tapWidth), edgesHit };
+        return { href: a.href, img: image(a.querySelector("img")), tapHeight: Math.round(tapHeight), tapWidth: Math.round(tapWidth), tapLeft: Math.min(...boxes.map((b) => b.left)), tapRight: Math.max(...boxes.map((b) => b.right)), edgesHit };
       }),
       horizontalScroll: document.documentElement.scrollWidth > innerWidth,
     };
@@ -60,6 +60,10 @@ const checkProfile = async (where) => {
     softCheck(got.edgesHit, "tap", `${where}: link ${i + 1} opens from all four edges of its image`);
     softCheck(got.img.src === want[theme], "theme", `${where}: link ${i + 1} shows the ${theme} variant ${want[theme]} (got ${got.img.src})`);
   });
+  for (let i = 1; i < p.links.length; i++) {
+    const gap = Math.round(p.links[i].tapLeft - p.links[i - 1].tapRight);
+    softCheck(gap >= 8, "tap", `${where}: tap areas of links ${i} and ${i + 1} are at least 8px apart (got ${gap}px)`);
+  }
   softCheck(!p.horizontalScroll, "layout", `${where}: no horizontal scroll`);
   return p;
 };

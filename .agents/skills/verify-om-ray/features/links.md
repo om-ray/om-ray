@@ -17,7 +17,7 @@ Right under the hero on github.com/om-ray.
 
 ## Proof
 
-All three pills are readable in `01-profile-1440.png` and `02-profile-390.png`. `run.log` has `link N goes to …`, `alt reads …`, `button decoded at 44px tall`, `tap area at least 44x44px` and `opens from all four edges of its image` for each link at both widths, and `all three buttons sit on one row` at 390.
+All three pills are readable in `01-profile-1440.png` and `02-profile-390.png`. `run.log` has `link N goes to …`, `alt reads …`, `button decoded at 44px tall`, `tap area at least 44x44px` and `opens from all four edges of its image` for each link at both widths, `tap areas of links N and N+1 are at least 8px apart`, and `all three buttons sit on one row` at 390.
 
 ## Charters
 
@@ -29,4 +29,5 @@ links-keyboard|aside-1440|keyboard|Using only Tab and Enter, reach and open each
 ## Gotchas
 
 - GitHub adds `rel="nofollow"` to every link. That is expected.
+- An `&ensp;` after the first two links keeps their tap areas at least 8px apart.
 - The visible pill is about 32px tall. The padding around it is transparent and still part of the link.
