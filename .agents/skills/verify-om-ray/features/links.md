@@ -5,7 +5,7 @@ Three pill buttons under the hero: OMRAY.DEV, X and LINKEDIN.
 ## Sub-features
 
 - `p[align=center]` with three links: `https://omray.dev`, `https://x.com/OmRayDev`, `https://www.linkedin.com/in/om-ray-0633971a3/`.
-- Each is an SVG pill, 32px tall, with alt "omray.dev", "X @OmRayDev" or "LinkedIn", and a dark variant.
+- Each is an SVG drawn at 44px tall: a pill about 32px tall inside transparent padding, so the tap area is at least 44x44px. `scripts/pad-link-buttons.mjs` adds the padding, and the `link-tap-target` lint rule bans a linked image under 44px. Alt "omray.dev", "X @OmRayDev" or "LinkedIn", and a dark variant.
 
 ## How to get to it (user POV)
 
@@ -17,7 +17,7 @@ Right under the hero on github.com/om-ray.
 
 ## Proof
 
-All three pills are readable in `01-profile-1440.png` and `02-profile-390.png`. `run.log` has `link N goes to …`, `alt reads …` and `button decoded at 32px tall` for each link at both widths.
+All three pills are readable in `01-profile-1440.png` and `02-profile-390.png`. `run.log` has `link N goes to …`, `alt reads …`, `button decoded at 44px tall`, `tap area at least 44x44px` and `opens from all four edges of its image` for each link at both widths, and `all three buttons sit on one row` at 390.
 
 ## Charters
 
@@ -29,4 +29,4 @@ links-keyboard|aside-1440|keyboard|Using only Tab and Enter, reach and open each
 ## Gotchas
 
 - GitHub adds `rel="nofollow"` to every link. That is expected.
-- The tap area is 36px tall at 390, under 44px. This is a known issue, see SKILL.md.
+- The visible pill is about 32px tall. The padding around it is transparent and still part of the link.

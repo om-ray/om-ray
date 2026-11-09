@@ -22,3 +22,11 @@ test("local-asset-exists flags wrong case, missing srcset entries, missing links
     assert.match(output, new RegExp(`local-asset-exists.*"${target.replaceAll(".", "\\.")}"`), output);
   assert.equal(output.match(/local-asset-exists/g).length, 4, output);
 });
+
+test("link-tap-target flags a linked image shorter than 44px and passes 44px or unlinked images", () => {
+  assert.equal(lint("good.md").status, 0, lint("good.md").output);
+  const { status, output } = lint("short-tap.md");
+  assert.equal(status, 1, output);
+  assert.match(output, /short-tap\.md:3 error link-tap-target .*height="32" makes a 32px tap target/, output);
+  assert.equal(output.match(/link-tap-target/g).length, 1, output);
+});

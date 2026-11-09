@@ -34,7 +34,7 @@ $V down             # stop the preview by its recorded PID, delete the copy on o
 
 `lib.js` opens one tab on the preview, gives the flow a 105s budget, and always closes its tab. It provides `check` (stops the flow), `softCheck` (logs `<kind> FAILED` and fails the flow at the end, so one bug never hides the next), `until`, and `shot(name)` (waits for every image, then sends a full-page PNG back over stdout).
 
-`profile.js` checks at 1440 and 390: the hero links to omray.dev, its alt text, that it decodes and spans the column, that both hero WebPs are animated, the three link buttons' hrefs, alt text and 32px height, no horizontal scroll, and that all eight theme assets decode. Then it forces `light` and `dark` with `page.emulateMedia` and reloads. `<picture>` picks its source at load, so without the reload it keeps the old variant. It checks that every image shows that theme's file.
+`profile.js` checks at 1440 and 390: the hero links to omray.dev, its alt text, that it decodes and spans the column, that both hero WebPs are animated, the three link buttons' hrefs, alt text and 44px height, that each has a tap area of at least 44x44px and opens from all four edges of its image, that they sit on one row at 390, no horizontal scroll, and that all eight theme assets decode. Then it forces `light` and `dark` with `page.emulateMedia` and reloads. `<picture>` picks its source at load, so without the reload it keeps the old variant. It checks that every image shows that theme's file.
 
 To add a flow, copy `profile.js`, wrap the body in `await run(async () => { ... })`, name shots `NN-what.png`, and add or update its feature file.
 
@@ -57,7 +57,3 @@ Each feature file ends in `Charters`, one line each as `slug|target|persona|char
 - Browse and screenshot only in Aside, through `drive` or `bash`. Never Playwright, Puppeteer, headless Chromium, gstack browse or the T3 preview.
 - Keep the server on om-mac's loopback. Never expose it.
 - Every issue a run finds gets a lint rule in `lint-rules/` or a check in a flow.
-
-## Known issues
-
-- At 390 the link buttons' tap area is 36px tall (`profile.js` logs it), under the 44px the UI rules ask for. The buttons are README product content, so changing them is a separate page.

@@ -14,6 +14,7 @@ const readProfile = () =>
       loaded: img.complete && img.naturalWidth > 0,
       width: Math.round(img.getBoundingClientRect().width),
       height: Math.round(img.getBoundingClientRect().height),
+      top: Math.round(img.getBoundingClientRect().top),
     });
     const heroLink = article.querySelector(":scope > a");
     const row = article.querySelector('p[align="center"]');
@@ -25,7 +26,16 @@ const readProfile = () =>
       links: [...(row?.querySelectorAll("a") ?? [])].map((a) => {
         const boxes = [a, a.querySelector("img")].map((el) => el.getBoundingClientRect());
         const tapHeight = Math.max(...boxes.map((b) => b.bottom)) - Math.min(...boxes.map((b) => b.top));
-        return { href: a.href, img: image(a.querySelector("img")), tapHeight: Math.round(tapHeight) };
+        const tapWidth = Math.max(...boxes.map((b) => b.right)) - Math.min(...boxes.map((b) => b.left));
+        const hit = (x, y) => document.elementFromPoint(x, y)?.closest("a") === a;
+        const img = a.querySelector("img").getBoundingClientRect();
+        const edgesHit = [
+          [img.left + img.width / 2, img.top + 1],
+          [img.left + img.width / 2, img.bottom - 1],
+          [img.left + 1, img.top + img.height / 2],
+          [img.right - 1, img.top + img.height / 2],
+        ].every(([x, y]) => hit(x, y));
+        return { href: a.href, img: image(a.querySelector("img")), tapHeight: Math.round(tapHeight), tapWidth: Math.round(tapWidth), edgesHit };
       }),
       horizontalScroll: document.documentElement.scrollWidth > innerWidth,
     };
@@ -45,7 +55,9 @@ const checkProfile = async (where) => {
     const got = p.links[i];
     softCheck(got.href === want.href, "links", `${where}: link ${i + 1} goes to ${want.href} (got ${got.href})`);
     softCheck(got.img.alt === want.alt, "links", `${where}: link ${i + 1} alt reads "${want.alt}" (got "${got.img.alt}")`);
-    softCheck(got.img.loaded && got.img.height === 32, "links", `${where}: link ${i + 1} button decoded at 32px tall (got ${got.img.height}px)`);
+    softCheck(got.img.loaded && got.img.height === 44, "links", `${where}: link ${i + 1} button decoded at 44px tall (got ${got.img.height}px)`);
+    softCheck(got.tapHeight >= 44 && got.tapWidth >= 44, "tap", `${where}: link ${i + 1} tap area at least 44x44px (got ${got.tapWidth}x${got.tapHeight}px)`);
+    softCheck(got.edgesHit, "tap", `${where}: link ${i + 1} opens from all four edges of its image`);
     softCheck(got.img.src === want[theme], "theme", `${where}: link ${i + 1} shows the ${theme} variant ${want[theme]} (got ${got.img.src})`);
   });
   softCheck(!p.horizontalScroll, "layout", `${where}: no horizontal scroll`);
@@ -82,8 +94,8 @@ await run(async () => {
 
   await page.setViewportSize({ width: 390, height: 844 });
   const phone = await checkProfile("390");
-  const shortTaps = phone.links.filter((l) => l.tapHeight < 44).map((l) => `${l.img.alt} ${l.tapHeight}px`);
-  step(`390: link tap heights ${phone.links.map((l) => l.tapHeight).join("/")}px${shortTaps.length ? `; under 44px: ${shortTaps.join(", ")}` : ""}`);
+  const tops = phone.links.map((l) => l.img.top);
+  softCheck(new Set(tops).size === 1, "layout", `390: all three buttons sit on one row (tops ${tops.join("/")}px)`);
   await shot("02-profile-390");
   await page.setViewportSize({ width: 1440, height: 900 });
 
