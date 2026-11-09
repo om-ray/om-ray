@@ -89,14 +89,8 @@ cmd_doctor() {
   echo "doctor ok: pid $pid serves $ORIGIN on om-mac loopback, README ${local_sha:0:12} current"
 }
 
-session_dir() {
-  local dir
-  dir="$(grep -oE '^SESSION_DIR=/Users/[A-Za-z0-9_.-]+/\.aside/[A-Za-z0-9_/-]+/sessions/[A-Za-z0-9_-]+$' "$1" | tail -1 | cut -d= -f2 || true)"
-  if [[ -n "$dir" ]]; then echo "${dir#/Users/*/}"; fi
-}
-
 cmd_drive() {
-  local flow="$1" name out session shots_ok=0
+  local flow="$1" name out shots_ok=0
   [[ -f "$flow" ]] || flow="$SKILL/flows/$flow"
   [[ -f "$flow" ]] || die "no flow $1"
   cmd_doctor >/dev/null
@@ -115,16 +109,17 @@ cmd_drive() {
       const V = { origin: e.ORIGIN, name: e.NAME };
       const code = `const V = ${JSON.stringify(V)};\n${fs.readFileSync(e.LIB, "utf8")}\n${fs.readFileSync(e.FLOW, "utf8")}`;
       console.log(`await (new (Object.getPrototypeOf(async function () {}).constructor)(${JSON.stringify(code)}))()`);' \
-    | timeout 150 ssh om-mac "$ASIDE repl" 2>&1 | tee -a "$out/run.log"
+    | timeout 150 ssh om-mac "$ASIDE repl" 2>&1 | node "$SKILL/shots.mjs" "$out"
   set -e
-  session="$(session_dir "$out/run.log")"
-  if [[ -n "$session" ]]; then
-    scp -q "om-mac:$session/artifacts/$name/*.png" "$out/" 2>/dev/null && compgen -G "$out/*.png" >/dev/null && shots_ok=1
-    mac "rm -rf ~/'$session'"
-  fi
-  { ((shots_ok)) && echo "screenshots: $out" || echo "no screenshots came back"; } | tee -a "$out/run.log"
+  compgen -G "$out/*.png" >/dev/null && shots_ok=1
+  ! grep -q '^shot incomplete:' "$out/run.log" || shots_ok=0
+  local announced
+  while read -r announced; do
+    grep -qx "shot saved: $announced" "$out/run.log" || { echo "shot never arrived: $announced" | tee -a "$out/run.log"; shots_ok=0; }
+  done < <(sed -nE 's/^shot: ([A-Za-z0-9_-]+\.png)$/\1/p' "$out/run.log")
+  { ((shots_ok)) && echo "screenshots: $out" || echo "a screenshot is missing or incomplete"; } | tee -a "$out/run.log"
   grep -qx 'FLOW_OK' "$out/run.log" || die "flow $name failed; see $out/run.log"
-  ((shots_ok)) || die "flow $name passed but no screenshots came back from om-mac"
+  ((shots_ok)) || die "flow $name passed but a screenshot is missing or incomplete; see $out/run.log"
 }
 
 cmd_bash() {

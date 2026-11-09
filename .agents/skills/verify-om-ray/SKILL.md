@@ -30,9 +30,9 @@ $V down             # stop the preview by its recorded PID, delete the copy on o
 
 ## Drive
 
-`drive <flow>` sends `const V = { origin, name }` + `flows/lib.js` + the flow as one `aside repl` call over ssh, then copies the flow's PNGs back from the session folder the flow prints as `SESSION_DIR=` (Aside 1.26 no longer prints it in a banner) and deletes that folder on the Mac. It fails unless the flow printed `FLOW_OK` and at least one screenshot came back.
+`drive <flow>` sends `const V = { origin, name }` + `flows/lib.js` + the flow as one `aside repl` call over ssh, and pipes the output through `shots.mjs`. Aside 1.26 deletes the REPL's session folder when the call ends and locks `fs` to it, so `shot()` prints each PNG as numbered base64 chunks ending in `#` (`SHOT_PNG <name> i/n <data>#`). `shots.mjs` rejoins chunks the REPL split with its own `[ok | Nms]` text and writes `.verify/shots/<flow>/<name>`. `shots.test.mjs` pins that. `drive` fails unless the flow printed `FLOW_OK` and every shot it announced arrived whole.
 
-`lib.js` opens one tab on the preview, gives the flow a 105s budget, and always closes its tab. It provides `check` (stops the flow), `softCheck` (logs `<kind> FAILED` and fails the flow at the end, so one bug never hides the next), `until`, and `shot(name)` (waits for every image, then takes a full-page PNG).
+`lib.js` opens one tab on the preview, gives the flow a 105s budget, and always closes its tab. It provides `check` (stops the flow), `softCheck` (logs `<kind> FAILED` and fails the flow at the end, so one bug never hides the next), `until`, and `shot(name)` (waits for every image, then sends a full-page PNG back over stdout).
 
 `profile.js` checks at 1440 and 390: the hero links to omray.dev, its alt text, that it decodes and spans the column, that both hero WebPs are animated, the three link buttons' hrefs, alt text and 32px height, no horizontal scroll, and that all eight theme assets decode. Then it forces `light` and `dark` with `page.emulateMedia` and reloads. `<picture>` picks its source at load, so without the reload it keeps the old variant. It checks that every image shows that theme's file.
 

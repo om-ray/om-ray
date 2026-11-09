@@ -1,6 +1,12 @@
-const shotDir = `./artifacts/${V.name}`;
-console.log(`SESSION_DIR=${typeof pwd === "function" ? await pwd() : pwd}`);
-await fs.mkdir(shotDir, { recursive: true });
+const sendShot = async (name) => {
+  const png = await page.screenshot({ fullPage: true });
+  const base64 = png.toString("base64");
+  const size = 8_000;
+  const parts = Math.ceil(base64.length / size);
+  for (let i = 0; i < parts; i++) {
+    console.log(`SHOT_PNG ${name}.png ${i + 1}/${parts} ${base64.slice(i * size, (i + 1) * size)}#`);
+  }
+};
 
 const deadline = Date.now() + 105_000;
 const step = (message) => console.log(`step: ${message}`);
@@ -34,7 +40,7 @@ const imagesSettled = () =>
 const shot = async (name) => {
   await until(imagesSettled, `every image finished loading before ${name}`);
   await page.evaluate(() => document.activeElement?.blur());
-  await page.screenshot({ path: `${shotDir}/${name}.png`, fullPage: true });
+  await sendShot(name);
   console.log(`shot: ${name}.png`);
 };
 
@@ -48,7 +54,7 @@ const run = async (body) => {
     if (problems.length > 0) throw new Error(`FAILED: ${[...new Set(problems)].join(", ")}`);
     console.log("FLOW_OK");
   } catch (error) {
-    await page.screenshot({ path: `${shotDir}/zz-failure.png`, fullPage: true }).catch(() => {});
+    await sendShot("zz-failure").catch(() => {});
     console.log(String(error));
   } finally {
     await closeTab(page).catch(() => {});

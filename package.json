@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "lint": "markdownlint-cli2",
-    "test": "node --test lint-rules/*.test.mjs",
+    "test": "node --test lint-rules/*.test.mjs .agents/skills/verify-om-ray/*.test.mjs",
     "verify": ".agents/skills/verify-om-ray/verify.sh run"
   },
   "devDependencies": {
