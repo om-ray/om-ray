@@ -91,8 +91,7 @@ cmd_doctor() {
 
 session_dir() {
   local dir
-  dir="$(grep -oE '^sessionDir: (~|/Users/[A-Za-z0-9_.-]+)/\.aside/[A-Za-z0-9_/-]+/sessions/[A-Za-z0-9_-]+$' "$1" | tail -1 | cut -d' ' -f2 || true)"
-  dir="${dir#\~/}"
+  dir="$(grep -oE '^SESSION_DIR=/Users/[A-Za-z0-9_.-]+/\.aside/[A-Za-z0-9_/-]+/sessions/[A-Za-z0-9_-]+$' "$1" | tail -1 | cut -d= -f2 || true)"
   if [[ -n "$dir" ]]; then echo "${dir#/Users/*/}"; fi
 }
 

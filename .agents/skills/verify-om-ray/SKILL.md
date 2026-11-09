@@ -30,7 +30,7 @@ $V down             # stop the preview by its recorded PID, delete the copy on o
 
 ## Drive
 
-`drive <flow>` sends `const V = { origin, name }` + `flows/lib.js` + the flow as one `aside repl` call over ssh, then copies the flow's PNGs back and deletes the Aside session folder on the Mac. It fails unless the flow printed `FLOW_OK` and at least one screenshot came back.
+`drive <flow>` sends `const V = { origin, name }` + `flows/lib.js` + the flow as one `aside repl` call over ssh, then copies the flow's PNGs back from the session folder the flow prints as `SESSION_DIR=` (Aside 1.26 no longer prints it in a banner) and deletes that folder on the Mac. It fails unless the flow printed `FLOW_OK` and at least one screenshot came back.
 
 `lib.js` opens one tab on the preview, gives the flow a 105s budget, and always closes its tab. It provides `check` (stops the flow), `softCheck` (logs `<kind> FAILED` and fails the flow at the end, so one bug never hides the next), `until`, and `shot(name)` (waits for every image, then takes a full-page PNG).
 

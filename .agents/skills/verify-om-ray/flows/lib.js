@@ -1,4 +1,5 @@
 const shotDir = `./artifacts/${V.name}`;
+console.log(`SESSION_DIR=${typeof pwd === "function" ? await pwd() : pwd}`);
 await fs.mkdir(shotDir, { recursive: true });
 
 const deadline = Date.now() + 105_000;
