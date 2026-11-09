@@ -52,7 +52,7 @@ HTML
     echo '</html>'
   } > "$SITE/index.html"
   (cd "$WT" && git ls-files -z --cached --others --exclude-standard \
-    | grep -zvE '^(\.|node_modules/|lint-rules/)|\.md$|^package(-lock)?\.json$' \
+    | grep -zvE '^(\.|node_modules/|lint-rules/|scripts/)|\.md$|^package(-lock)?\.json$' \
     | xargs -0 -r cp --parents -t "$SITE")
   sha256sum "$WT/README.md" | cut -d' ' -f1 > "$SITE/.readme-sha"
   echo "rendered $SITE ($(find "$SITE" -type f | wc -l) files)"
